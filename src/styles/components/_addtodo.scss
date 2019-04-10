@@ -1,0 +1,15 @@
+.addtodo{
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.addtodo__button{
+  background: #898998;
+  border: none;
+  border-bottom: .6rem solid darken(#898998, 10%);
+  color: black;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 12px;
+}

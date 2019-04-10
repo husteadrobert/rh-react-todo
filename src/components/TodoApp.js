@@ -9,7 +9,7 @@ class TodoApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      todo_list: [{name: "Do something", active: true}]
+      todo_list: []
     };
     this.handleAddTodo = this.handleAddTodo.bind(this);
     this.handleFinishTodo = this.handleFinishTodo.bind(this);
@@ -46,10 +46,26 @@ class TodoApp extends React.Component {
   handleDeleteTodo(todo) {
     const result = this.state.todo_list.find((obj) => ( obj.name === todo.name));
     if (result) {
-      console.log(result);
       const todo_list = this.state.todo_list.filter((obj) => (obj.name !== todo.name));
-
       this.setState(() => ({ todo_list }));
+    }
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.todo_list.length !== this.state.todo_list.length) {
+      const json = JSON.stringify(this.state.todo_list)
+      localStorage.setItem('todo_list', json);
+    }
+  }
+
+  componentDidMount() {
+    try {
+      const json = localStorage.getItem('todo_list');
+      const todo_list = JSON.parse(json);
+      if (todo_list) {
+        this.setState(() => ({ todo_list }));
+      }
+    } catch(e) {
+      //Do nothing
     }
   }
 

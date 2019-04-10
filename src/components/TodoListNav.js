@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TodoListNav = (props) => (
-  <div>
+  <div className="nav">
     <label>
       <input
         type="radio"

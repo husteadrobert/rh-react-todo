@@ -28,8 +28,8 @@ class AddTodo extends React.Component {
   }
   render() {
     return(
-      <div>
-        <button onClick={(e) => { 
+      <div className="addtodo">
+        <button className="addtodo__button" onClick={(e) => { 
           this.setState(() => ({modal_active: true}))
         }}>Add Todo</button>
         <AddTodoModal modal_active={this.state.modal_active} handleClose={this.handleClose} handleAddTodo={this.handleAddTodo}/>

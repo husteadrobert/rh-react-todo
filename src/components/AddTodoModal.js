@@ -7,6 +7,7 @@ const AddTodoModal = (props) => (
     onRequestClose={props.handleClose}
     appElement={document.getElementById('app')}
     contentLabel="Add Todo"
+    className="modal"
   >
     <h1>Lol Modal</h1>
     <form onSubmit={props.handleAddTodo}>

@@ -1,0 +1,13 @@
+.ReactModalPortal .ReactModal__Overlay {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.modal {
+  background: white;
+  outline: none;
+  padding: 30px;
+  position: absolute;
+  top: 20%;
+}

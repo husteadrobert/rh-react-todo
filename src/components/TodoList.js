@@ -30,7 +30,7 @@ class TodoList extends React.Component {
   }
   render() {
     return(
-      <div>
+      <div className="container">
         <TodoListNav handleOnChange={this.handleOnChange} current_filter={this.state.filter}/>
         {this.filter_list(this.props.list).map((item) => (
           <TodoItem handleFinishTodo={this.props.handleFinishTodo} handleDeleteTodo={this.props.handleDeleteTodo} key={item.name} item={item} />
